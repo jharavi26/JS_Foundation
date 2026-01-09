@@ -1,0 +1,44 @@
+*{
+  background-color: aqua;
+}
+
+
+.art{
+  height: 300px;
+  width: 300px;
+  margin: 5px;
+  background-color: red;
+  transition: margin 4s ease,  background-color 3s ease-in ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.art:hover{
+  background-color: green;
+  margin: 50px;
+}
+
+.art2{
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  color: white;
+  animation: positionchange 3s linear 1s infinite alternate;  
+  /* animation: name duration timing-function delay iteration-count direction fill-mode;     */
+}
+
+@keyframes positionchange{
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 1000px;
+  }
+}
