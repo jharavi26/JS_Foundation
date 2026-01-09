@@ -1,0 +1,39 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#art1{
+  font-size: large;
+  font-weight: bold;
+}
+
+.selector{
+  height: 250px;
+  width: 400px;
+  background-color: yellow;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.traverse{
+  height: 300px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: green;
+  margin : 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.highlight {                                           /*  Add CSS classlist  */
+  background-color: orange;
+  color: white;
+  padding: 10px;
+}
