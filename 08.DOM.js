@@ -1,89 +1,98 @@
-/* DOM :- Programming interface provided by web browsers that represents the structure of a web document as a tree of objects.
-It allows JavaScript to interact with and manipulate the content, structure, and styles of a webpage dynamically.
-getElementsByClassName() & TagName() method returns an HTMLCollection object. An HTMLCollection is an array like list of HTML elements. 
-The length property provides the size of the collection. 
-It is possible to loop through all the HTMLCollection elements. */
+let elm = document.getElementById("art1");                       //Returns a one Element 
+elm.style.color = "green";
+console.log(elm);
 
-//Selecting Element :-
-// 1.document.getElementsByTagName('tagname')
-// 2.document.getElementsByClassName('classname')
-// 3.document.getElementById('id')
-// 4.document.queryselector() , queryAllSelector
+//The HTMLCollection is live means that it is automatically updated when the DOM tree in the document changes.
+//Note that the HTMLCollection is an array-like object.
 
-/*let firstTitle = document.querySelector('h1') // select the first available h1 element
-let firstTitle = document.querySelector('#first-title') // select id with first-title
-let firstTitle = document.querySelector('.title') // select the first available element with class title*/
+let head = document.getElementsByClassName("header");                  // Returns a HTML LiveCollections
+console.log(head[0].textContent);
 
-/* Attribute :- An attribute is added in the opening tag of HTML which gives additional information about the element.
-The setAttribute() method set any html attribute. It takes two parameters the type of the attribute and the name of the attribute. 
+let qs1 = document.querySelector(".desc")                      //document.querySelector Returns first matching element.
+console.log(qs1.textContent);                                                                                            
 
-const titles = document.querySelectorAll('h1')
-titles[3].setAttribute('class', 'title')
-titles[3].setAttribute('id', 'fourth-title')
 
-The textContent property is used to add text to an HTML element.
+let qs2 = document.querySelectorAll(".desc")                   //document.querySelectorAll return static nodelist of all Matches .
+qs2.forEach(p =>console.log(p.textContent));
 
-const titles = document.querySelectorAll('h1')
-titles.textContent = 'Fourth Title'
 
-The innerHTML property sets or gets the HTML content of an element, including its descendants.
+// Traversing in Dom 
 
-Styling Element :-document.getElementById("title").style.color = "blue";
-*/
+let parent = document.querySelector(".child");
+console.log(parent.parentNode);
 
-// result = document.getElementsByTagName('p');
-// console.log(result);
+let currentNode = document.querySelector(".current")
+let nextSibling = currentNode.nextElementSibling;
+console.log(nextSibling);
 
-// const anuj = document.getElementsByClassName('paragraph');
-// console.log(anuj);
+let previousSibling = currentNode.previousElementSibling;
+console.log(previousSibling);
 
-// Selecting dom element using query selector method
-const Element = document.querySelectorAll("p");
-console.log(Element);
-console.log(Element.length);
+let parentNode = document.querySelector("#menu");
+let child = parentNode.firstChild;
+let childElement = parentNode.firstElementChild;
+console.log(child);
+console.log(childElement);
 
-// // // Iterate through each element and log its textContent
-Element.forEach(element => {
-    console.log(element.textContent);
-  });
+let lastChildElement = parentNode.lastElementChild;
+let lastChild = parentNode.lastChild;
 
-// //Another way is 
-for(let i=0; i<=Element.length;i++){
-    console.log(Element[i]);
-}
+console.log(lastChild);
+console.log(lastChildElement);
 
-const ele = document.querySelector('#first-para');       // selecting element using Id_Name
-console.log(ele)
-console.log(ele.textContent);
+let children = parentNode.children;
+console.log(children);
 
-let res =document.querySelector('#third-para');
-console.log(res);
-let ravi = res.textContent = 'Fourth Paragraph' 
-console.log(ravi);
+const h2 = document.createElement("h2");
+h2.textContent = "UseCase of Before Method";                     
+parentNode.before(h2);                                       // allows you to insert one or more nodes before the element
 
-const titles = document.querySelector('h1')     // Adding attribute 
-titles.setAttribute('class', 'title')
-titles.setAttribute('id', 'fourth-title')
+const h3 = document.createElement("h3");
+h3.textContent = "UseCase of After Method";                     
+parentNode.after(h3);                                        // after() method to insert a node after an element.
+ 
+let btn1 = document.getElementById("ravi");                            
+let result = btn1.getAttribute("id");                                      // getAttribute
+console.log(result);
 
-console.log(titles);
+btn1.style.backgroundColor = "red";                     //Inline Style
+btn1.style.color = "white";
+btn1.style.borderRadius = "10px";
+btn1.style.fontSize = "16px";
+btn1.style.padding = "5px"
+btn1.style.margin = "10px"
 
-//The setAttribute() method set any html attribute.
-// It takes two parameters the type of the attribute and the name of the attribute. 
+btn1.setAttribute("name", "Submit");                                       // setAttribute
+let result2 = btn1.getAttribute("name")
+console.log("result2")
 
-const hand = document.querySelector('h2');
-hand.setAttribute('class', 'Header' );
-hand.setAttribute('id','Fifth_Element');
-console.log(hand);
+console.log(btn1.hasAttribute("name"))
 
-const colour = document.querySelectorAll("p");
-colour.forEach((para, i) => {
-  if (i%2==0){
-    para.style.backgroundColor = "red"
-  }
-  else {
-    para.style.backgroundColor ="Blue"
-  }
-})
+btn1.removeAttribute("id");
+console.log(btn1.hasAttribute("id"));
 
 
 
+//Add & Append the element or nodelist
+
+let content = document.createElement("div");
+content.innerHTML = "Create & Append a Element";
+content.id = "art3";
+content.className = "note";
+document.body.append(content);
+console.log(content.getAttribute("id"))
+
+
+let para = document.getElementById("note");
+console.log(para.textContent);
+
+console.log(para.innerHTML);             //get or set the HTML markup contained within the element:
+
+console.log(para.innerText);                //returns only human-readable text.
+
+para.classList.add("highlight");
+
+
+
+
+ 
