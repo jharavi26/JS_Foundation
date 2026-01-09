@@ -20,17 +20,22 @@ const rectangle = {
   console.log(rectangle['width']);   //Bracket notation is useful when the property name contains special characters or spaces, 
   console.log(rectangle[property]);  //or when you need to access the property dynamically (using a variable).
 
-const keys = Object.keys(rectangle);     // getting object key
-console.log(keys);
-
-const values = Object.values(rectangle);  //getting object value
-console.log(values)
-
-const entries = Object.entries(rectangle);    //getting object key & value pair
-console.log(entries) 
-
 console.log(rectangle.hasOwnProperty('name'));      //hasOwnProperty: To check if a specific key or property exist in an object
 console.log(rectangle.hasOwnProperty('work')); 
+
+//Object Methods
+
+const user = {
+  name : "Ravikumar",
+  age : 26,
+  education : "Master",
+}
+
+console.log(Object.keys(user));                             // Response in array Format 
+console.log(Object.values(user));
+console.log(Object.entries(user));
+console.log(Object.freeze(user));                        // Make a object Immutabale 
+console.log(Object.seal(user));                          // changes in only existing Property 
 
 const dog ={
   name : 'John',
@@ -40,7 +45,7 @@ const dog ={
   bark: function() {
     return "Woof woof";
   },
-  breed: "Golden Retriever",  // breed property         
+  breed: "Golden Retriever",                      // breed property         
   getDogInfo: function() {                       // getDogInfo method to get a summary of the dog's information
     return `This is ${this.name}, a ${this.age}-year-old ${this.breed} with ${this.legs} legs and ${this.color} color.`;
   }
@@ -48,3 +53,28 @@ const dog ={
 console.log(dog);
 const value = Object.values(dog);
 console.log(value);
+
+
+// Copy of Object 
+
+// Shallow Copy :- Copies the first level properties of the object. If the property value is a primitive → new copy is created.If the   property value is a reference (object/array) → only the reference is copied (not the actual object). So changes in the nested object affect both copies.
+
+// 1. Using assign Method 
+
+const obj1 = {a : 10, b : 20, d : {c : 30} }
+const obj2 = Object.assign({}, obj1);
+obj2.d.c = 31
+console.log(obj2);
+
+// 2.Using Spread Operator 
+
+const obj3 = {...obj1};
+console.log(obj3);
+
+
+//Deep copy of Object - Changes in nested objects will not affect the original. 
+
+const obj4 = JSON.parse(JSON.stringify(obj1));
+obj4.d.c = 30;
+console.log(obj1);
+console.log(obj4)
