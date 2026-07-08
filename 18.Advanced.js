@@ -91,7 +91,7 @@ console.log(square4);
 // let r = 24;
 
 console.log(s);                    // undefined
-var s = 26;     
+var sr = 26;     
 
 
 greet();                                                  // Function Hoisting with Default Parameter
