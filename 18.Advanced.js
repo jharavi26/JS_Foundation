@@ -68,7 +68,19 @@ debounceLog();
   // Throttling in JavaScript is a technique used to improve performance by controlling how often a function is executed over time. It ensures that a function is only executed at most once within a specified time interval, even if it is called multiple times during that interval.
 
 
-  // The execution context is created in two phases.
+//Currying :-Currying is a process in which a function, instead of taking all arguments at once, takes them one at a time and returns a new function that takes the next argument.
+
+function multiplication(a){
+  return function (b){
+    return function (c){
+      return a*b*c
+    }
+}
+}
+
+console.log(multiplication(3)(4)(5));
+
+// The execution context is created in two phases.
 
 // Memory creation phase - JS will allocate memory to variables and functions.
 // Code execution phase
