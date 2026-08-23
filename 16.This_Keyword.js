@@ -6,6 +6,49 @@
 
 // This Keyword :- refers to the context in which a function is called. Its value depends on how the function is invoked, and it behaves differently in strict mode and non-strict mode.
 
+//"How is this function being called?"
+
+const user1 = {
+  name : "ravi",
+  age : 27,
+  greet : function(){
+    console.log(this.name)
+  }
+}
+
+const user2 = {
+  name : "Art",
+  greet : user1.greet,
+}
+
+console.log(user2.greet());           // Print Art Because greet called in second user /
+
+
+const user3 = {
+  name : "ravi",
+  age : 27,
+  greet : function(){
+        const inner = ()=>{
+          console.log(this.name)
+        }
+        inner();
+}
+}
+user3.greet();         // ravi because arrow function have lexicall scoe .
+
+
+const user4 = {
+  name : "ravi",
+  age : 27,
+  greet : function(){
+        function inner(){
+          console.log(this.name)
+        }
+        inner();
+}
+}
+user4.greet();                // undefined because inner function call as normal call & take window object.
+ 
 // Context	Value of this
 // Global Scope	:-window (or undefined in strict mode)
 // Object Method	:-The object itself

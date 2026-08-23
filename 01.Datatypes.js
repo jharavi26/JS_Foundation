@@ -5,7 +5,7 @@
 
 //Falsy Value : 0, false, "" , null , undefined , NaN , -0
 
-console.log([] == false);    // Empty array Convery into "" which is also false Value.
+console.log([] == false);    // Empty array Convery into "" which is also false Value.009
 
 //Type coercion in JavaScript is the process of converting a value from one type to another automatically (implicit coercion) or manually (explicit coercion).
 
@@ -78,24 +78,6 @@ ismarried=true;
 console.log(typeof(ismarried));
 
 
-let height=20 , base=10;
-area = 0.5*height*base;
-console.log(area);
 
-hour = 40;
-cost =28;
-earning = hour*cost;
-console.log(earning);
-
-firstname ="Ravikumar";
-lastname = "Jha";
-if(firstname.length>lastname.length)
-{
-    console.log(`Your name is ${firstname} greater than your lastname is ${lastname}`)
-}
-else 
-{
-    console.log(`Your name is ${firstname} lesser than your lastname is ${lastname}`)
-}
 
 
