@@ -1,28 +1,28 @@
-// // Array :- an Array can store multiple values. Each value in an array has an index, and each index has a reference in a memory address. 
+//Array :- an Array can store multiple values. Each value in an array has an index, and each index has a reference in a memory address. 
 
-// // Create a Array 
+//Create a Array 
 const ars = new Array();
 console.log(ars);
 
-// // using Bracket 
+//using Bracket 
 
 const arrr = []
 console.log(arrr);
 
 const numbers = [0, 3.14, 9.81, 37, 98.6, 100]                    // array of numbers
-const fruits = ['banana', 'orange', 'mango', 'lemon']            // array of strings, fruits
+const fruits = ['banana', 'orange', 'mango', 'lemon']             // array of strings, fruits
 
 console.log('Numbers:', numbers)
 console.log('Number of numbers:', numbers.length)
 
-console.log(numbers.slice(1,5));                          //[ 3.14, 9.81, 37, 98.6 ] cut out 1 & 5 index element 
-
+console.log(numbers.slice(1,5));                               // [ 3.14, 9.81, 37, 98.6 ] include 1 & excluded 5 index
+ 
 console.log('Fruits:', fruits)
 console.log('Number of fruits:', fruits.length)
 
-const rev = numbers.concat(fruits)     //Concatenating array using concat
+const rev = numbers.concat(fruits)                         //Concatenating array using concat
 console.log(rev);
-console.log(rev.indexOf('mango'));     // to check element is present in array or not
+console.log(rev.indexOf('mango'));                     // to check element is present in array or not
 
 console.log(rev.includes('lemon'));          //To check if an item exist in an array. If it exist it returns the true else it returns false.
  console.log(rev.toString());                // Converts array to string
@@ -43,7 +43,7 @@ console.log(arr[2]);     // accessing array using its indexes
 let lastIndex = arr.length - 1;
 console.log(arr[lastIndex])
 
-console.log(typeof(arr));   // check datatype of variable
+console.log(typeof(arr));       // check datatype of variable
 
 arr[2]=false;                 //change the array element using index
 console.log(arr)

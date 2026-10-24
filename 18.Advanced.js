@@ -40,6 +40,9 @@ function result (a, ...num){
 }
 console.log(result(1,2,3,4,5));
 
+
+//SetTimeout :- Delay The Execution
+
 // Debouncing :- It ensures that a function is only called once after a specified period of time has passed since the last time it was invoked. 
 //If a new event is triggered before the delay ends, the previous call is canceled, and the timer restarts.
 

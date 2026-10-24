@@ -1,8 +1,8 @@
-// //A function is a reusable block of code or programming statements designed to perform a certain task. 
-// //A function is declared by a function key word followed by a name, followed by parentheses (). 
-// //A parentheses can take a parameter.
+// A function is a reusable block of code or programming statements designed to perform a certain task. 
+// A function is declared by a function key word followed by a name, followed by parentheses (). 
+// A parentheses can take a parameter.
 
-// //A function can be declared or created in couple of ways:
+// A function can be declared or created in couple of ways:
 
 // // 1. Declaration function :-
 // // 2. Expression function :- A function can also be assigned to a variable.
@@ -17,15 +17,16 @@
 
 // square();
 
-// //Immediately Invoked Function Expression (IIFE)
-// //A function that runs as soon as it's defined.
+// Immediately Invoked Function Expression (IIFE)
+// A function that runs as soon as it's defined.
 
 // (function() {
 //   console.log("IIFE executed!");
 // })();
 
 
-// // this function takes array as a parameter and sum up the numbers in the array
+//  this function takes array as a parameter and sum up the numbers in the array
+
 // function sumArrayValues(arr) {
 //     let sum = 0;
 //     for (let i = 0; i < arr.length; i++) {
