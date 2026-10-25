@@ -17,7 +17,10 @@ reject: Call this when the operation fails.
 
 .then(): Handles the fulfilled state and gets the resolved value.
 .catch(): Handles the rejected state and gets the rejection reason.
+
 */
+
+
 const myPromise = new Promise((resolve, reject) => {
     // Simulate an asynchronous operation
     const success = true; // Change this to false to test rejection

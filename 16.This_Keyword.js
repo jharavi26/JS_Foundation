@@ -122,15 +122,15 @@ fullname.call(person , 27 , "Mumbai");
 // Call PolyFills 
  
 Function.prototype.myCall = function(context = {} , ...args){
-  if(typeof this !== "function"){
+  if(typeof this !== "function"){                       // here this refers to the function(fullname) on which myCall is invoked
     throw new Error(this + "It is not Callable");
   }
 
-  context.fn = this;
-  const result = context.fn(...args);
-  delete context.fn;
-  return result;
-
+  context.fn = this;       //here attached object to the function as a property so that we can call it with the desired context. 
+  const result = context.fn(...args);            // here we are calling the function with the provided context and arguments.
+  delete context.fn;                    // here we are cleaning up by removing the temporary property from the context object to avoid any side effects.
+  return result;                  // here we are returning the result of the function call, which is the output of the original function invoked with the specified context and arguments.
+ 
 }
 
 fullname.myCall(person, 26 , "Delhi")
@@ -177,7 +177,7 @@ Function.prototype.myBind = function(context = {}, ...args){
   }
 
   context.fn = this;
-   return function(...newArgs){
+   return function(...newArgs){                   // here we are returning a new function that can be called later. This new function will have the same context and arguments as the original function.
     context.fn(...args, ...newArgs)
    };
 };
